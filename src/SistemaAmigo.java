@@ -71,7 +71,7 @@ public class SistemaAmigo {
 				amigoAchado = true;
 				
 				if(amigo.getEmailSorteado() == null) {
-					throw new AmigoNaoSorteadoException("Amigo não sorteado");
+					throw new AmigoNaoSorteadoException("Amigo nï¿½o sorteado");
 				}
 				
 				return amigo.getEmailSorteado();
