@@ -28,7 +28,7 @@ public class SistemaAmigoMapTest {
 	void testPesquisaECadastraAmigo() {
 		try {
 			sistema.pesquisaAmigo("ayla@teste.com");
-			fail("Deveria falhar pois n�o existe ainda");
+			fail("Deveria falhar pois não existe ainda");
 		} catch (AmigoInexistenteException e) {
 			//Ok
 		}
