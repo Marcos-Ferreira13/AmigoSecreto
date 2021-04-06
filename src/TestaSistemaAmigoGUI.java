@@ -2,10 +2,10 @@ import javax.swing.JOptionPane;
 
 public class TestaSistemaAmigoGUI {
 	public static void main(String[] args) {
-		int maxMensagens = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o número de mensagens permitidas:"));
+		int maxMensagens = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o nÃºmero de mensagens permitidas:"));
 		SistemaAmigo sistema = new SistemaAmigo(maxMensagens);
 		
-		int participantes = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o número de participantes:"));
+		int participantes = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o nÃºmero de participantes:"));
 		
 		for(int i=0; i< participantes; i++) {
 			String nomeAmigo = JOptionPane.showInputDialog("Digite o nome do amigo: " +i);
@@ -14,7 +14,7 @@ public class TestaSistemaAmigoGUI {
 		}
 		
 		for(int i=0; i< participantes; i++) {
-			String emailDaPessoa = JOptionPane.showInputDialog("Digite o email do amigo número"+ i);
+			String emailDaPessoa = JOptionPane.showInputDialog("Digite o email do amigo nÃºmero"+ i);
 			String emailAmigoSorteado = JOptionPane.showInputDialog("Digite o email do par do amigo "+ emailDaPessoa);
 			try {
 				sistema.configuraAmigoSecretoDe(emailDaPessoa, emailAmigoSorteado);

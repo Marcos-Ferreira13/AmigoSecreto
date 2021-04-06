@@ -8,8 +8,12 @@ public class TestaAmigo {
 		Mensagem msg = new MensagemParaTodos();
 		
 		//cadastrando
-		sistema.cadastraAmigo("Jos�", "Jose@gmail.com");
-		sistema.cadastraAmigo("Maria", "Maria@gmail.com");
+		try {
+			sistema.cadastraAmigo("José", "Jose@gmail.com");
+			sistema.cadastraAmigo("Maria", "Maria@gmail.com");
+		}catch(AmigoJaExisteException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		//excessoes
 		try {

@@ -6,7 +6,7 @@ import java.util.Map;
 public class SistemaAmigoMap {
 	List<Mensagem>mensagens;
 	Map<String,Amigo> amigos;
-	
+		
 	public SistemaAmigoMap() {
 		this.mensagens = new ArrayList<>();
 		this.amigos =new HashMap<>();
@@ -15,7 +15,7 @@ public class SistemaAmigoMap {
 	public void cadastraAmigo(String nomeAmigo,String emailAmigo) throws AmigoJaExisteException {
 		Amigo novoAmigo = new Amigo(nomeAmigo,emailAmigo);
 		if(this.amigos.containsKey(emailAmigo)) {
-			throw new AmigoJaExisteException("J� cadastrado no sistema");
+			throw new AmigoJaExisteException("Já cadastrado no sistema");
 		}else {
 			this.amigos.put(emailAmigo, novoAmigo);
 		}
@@ -27,7 +27,7 @@ public class SistemaAmigoMap {
 	public Amigo pesquisaAmigo(String emailAmigo) throws AmigoInexistenteException {
 		Amigo amigoAchado = this.amigos.get(emailAmigo);
 		if(amigoAchado == null) {
-			throw new AmigoInexistenteException("Amigo n�o encontrado no sistema.");
+			throw new AmigoInexistenteException("Amigo não encontrado no sistema.");
 		}else {
 			
 			return amigoAchado;
@@ -71,7 +71,7 @@ public class SistemaAmigoMap {
 		Amigo amigoSecreto = this.amigos.get(emailDaPessoa);
 		
 		if(amigoSecreto.getEmailSorteado() == null) {
-			throw new AmigoNaoSorteadoException("O amigo pesquisado n�o tem um amigo secreto");
+			throw new AmigoNaoSorteadoException("O amigo pesquisado não tem um amigo secreto");
 		}
 		
 		return amigoSecreto.getEmailSorteado();
@@ -88,4 +88,3 @@ public class SistemaAmigoMap {
 	}
 	
 }
-

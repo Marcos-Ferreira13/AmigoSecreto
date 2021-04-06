@@ -1,3 +1,4 @@
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,13 +9,13 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SistemaAmigoMapTest {
+public class SistemaAmigoTest {
 
-	SistemaAmigoMap sistema;
+	SistemaAmigo sistema;
 	
 	@BeforeEach
 	void setUp()  {
-		this.sistema = new SistemaAmigoMap();
+		this.sistema = new SistemaAmigo();
 	}
 
 	@Test
@@ -28,7 +29,7 @@ public class SistemaAmigoMapTest {
 	void testPesquisaECadastraAmigo() {
 		try {
 			sistema.pesquisaAmigo("ayla@teste.com");
-			fail("Deveria falhar pois n�o existe ainda");
+			fail("Deveria falhar pois não existe ainda");
 		} catch (AmigoInexistenteException e) {
 			//Ok
 		}

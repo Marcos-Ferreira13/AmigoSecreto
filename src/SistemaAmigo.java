@@ -4,7 +4,6 @@ import java.util.List;
 public class SistemaAmigo {
 	List<Mensagem>mensagens;
 	List<Amigo> amigos;
-	private int quantMensagensEnviadas = 0;
 	
 	
 	
@@ -23,7 +22,7 @@ public class SistemaAmigo {
 		}
 		
 		if(amigoExiste) {
-			throw new AmigoJaExisteException("Amigo j� cadastrado no sistema");
+			throw new AmigoJaExisteException("Amigo já cadastrado no sistema");
 		}else {
 			this.amigos.add(novoAmigo);
 		}
@@ -82,7 +81,7 @@ public class SistemaAmigo {
 				amigoAchado = true;
 				
 				if(amigo.getEmailSorteado() == null) {
-					throw new AmigoNaoSorteadoException("Amigo n�o sorteado");
+					throw new AmigoNaoSorteadoException("Amigo não sorteado");
 				}
 				
 				return amigo.getEmailSorteado();
