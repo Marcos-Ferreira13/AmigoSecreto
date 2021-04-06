@@ -6,9 +6,6 @@ import java.util.Map;
 public class SistemaAmigoMap {
 	List<Mensagem>mensagens;
 	Map<String,Amigo> amigos;
-	private int quantMensagensEnviadas = 0;
-	
-	
 	
 	public SistemaAmigoMap() {
 		this.mensagens = new ArrayList<>();
@@ -18,7 +15,7 @@ public class SistemaAmigoMap {
 	public void cadastraAmigo(String nomeAmigo,String emailAmigo) throws AmigoJaExisteException {
 		Amigo novoAmigo = new Amigo(nomeAmigo,emailAmigo);
 		if(this.amigos.containsKey(emailAmigo)) {
-			throw new AmigoJaExisteException("Já cadastrado no sistema");
+			throw new AmigoJaExisteException("Jï¿½ cadastrado no sistema");
 		}else {
 			this.amigos.put(emailAmigo, novoAmigo);
 		}
@@ -30,7 +27,7 @@ public class SistemaAmigoMap {
 	public Amigo pesquisaAmigo(String emailAmigo) throws AmigoInexistenteException {
 		Amigo amigoAchado = this.amigos.get(emailAmigo);
 		if(amigoAchado == null) {
-			throw new AmigoInexistenteException("Amigo não encontrado no sistema.");
+			throw new AmigoInexistenteException("Amigo nï¿½o encontrado no sistema.");
 		}else {
 			
 			return amigoAchado;
@@ -74,14 +71,14 @@ public class SistemaAmigoMap {
 		Amigo amigoSecreto = this.amigos.get(emailDaPessoa);
 		
 		if(amigoSecreto.getEmailSorteado() == null) {
-			throw new AmigoNaoSorteadoException("O amigo pesquisado não tem um amigo secreto");
+			throw new AmigoNaoSorteadoException("O amigo pesquisado nï¿½o tem um amigo secreto");
 		}
 		
 		return amigoSecreto.getEmailSorteado();
 	}
 	
 	public void configuraAmigoSecretoDe(String emailDaPessoa,String emailAmigoSorteado) throws AmigoInexistenteException{
-		Amigo amigoAchado = this.pesquisaAmigo(emailDaPessoa);
+		Amigo amigoAchado = this.amigos.get(emailDaPessoa);
 		if(amigoAchado == null) {
 			throw new AmigoInexistenteException ("Amigo Inexistente no sistema.");
 		}else {
